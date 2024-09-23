@@ -1,0 +1,26 @@
+---
+title: "Q2"
+author: "Gihanga"
+date: "2024-03-14"
+output: pdf_document
+---
+
+```{r}
+#a)
+
+set.seed(500)
+
+Sample_Data <- rnorm(500, mean = 36, sd = 8)
+
+hist(Sample_Data, breaks = 10, col = "blue", main = "Histogram of the Random Sample of 500", xlab = "Values", ylab = "Frequency")
+
+```
+
+```{r}
+
+#b)
+
+
+lines(density(Sample_Data), col = "red")
+
+```

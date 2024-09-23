@@ -1,0 +1,90 @@
+---
+title: "Q5"
+author: "Gihanga"
+date: "2024-03-21"
+output: pdf_document
+---
+
+```{r}
+#Part A
+
+#a)
+
+mean <- 5.5
+sd <- 1.2
+
+percentile <- qnorm(0.9, mean, sd)
+
+cat("The 90th percentile of customer spending is: $", round(percentile, 2))
+
+```
+
+```{R}
+#b)
+
+percentile <- qnorm(0.25, mean, sd)
+
+cat("The 25th percentile of customer spending is: $", round(percentile, 2))
+
+```
+
+```{r}
+#c)
+
+# median is same as the mean (in the normal distribution)
+
+median <- mean
+
+cat("The median value of customer spending is: $", round(median, 2))
+
+```
+
+```{r}
+#d)
+
+spend_amount <- 7
+
+percent_above <- 1 - pnorm(spend_amount, mean, sd)
+
+cat("The percentage of customers spending more than $7.00 is:", round(percent_above * 100, 2), "%")
+
+```
+
+```{r}
+# Part B
+
+#a)
+
+n <- 50
+p <- 0.05
+
+binomial_distribution <- rbinom(n, size = 1, prob = p)
+
+cat("binomial distribution is: ", binomial_distribution)
+```
+
+```{r}
+#b)
+
+x <- 0:2  
+probability_less_than_3 <- sum(dbinom(x, size = n, prob = p))
+
+cat("Probability of fewer than 3 infected individuals:", probability_less_than_3)
+
+```
+
+```{r}
+#c)
+
+mean_X <- n * p
+
+variance_X <- n * p * (1 - p)
+
+cat("Mean (expected value) of X:", mean_X, "\n")
+cat("Variance of X:", variance_X)
+```
+
+```{r}
+#d)
+
+```

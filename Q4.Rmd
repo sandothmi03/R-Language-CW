@@ -1,0 +1,59 @@
+---
+title: "Q4"
+author: "Gihanga"
+date: "2024-03-21"
+output: pdf_document
+---
+
+```{r}
+#a)
+
+head(mtcars, 10)
+
+```
+
+```{r}
+#b)
+
+summary(mtcars$mpg)
+summary(mtcars$hp)
+
+```
+
+```{r}
+#c)
+
+plot(mtcars$hp, mtcars$mpg)
+
+```
+
+```{r}
+#d)
+
+model <- lm(mpg ~ hp, data = mtcars)
+summary(model)
+abline(model)
+
+```
+
+```{r}
+#e)
+
+#mpg =  30.09 - 0.068 * hp 
+
+```
+
+```{r}
+#f)
+
+model <- lm(mpg ~ hp, data = mtcars)
+plot(mtcars$hp, residuals(model))
+
+```
+
+```{r}
+#g)
+
+predict(model, newdata = data.frame(hp = 110))
+
+```

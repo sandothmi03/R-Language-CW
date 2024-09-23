@@ -1,0 +1,77 @@
+---
+title: "Q1"
+author: "Gihanga"
+date: "2024-02-25"
+output: pdf_document
+---
+
+```{r}
+#a)
+
+# Numbers on the balls
+red_number <- 5
+green_number <- 10
+blue_number <- 15
+yellow_number <- 20
+
+values_X <- c(red_number + blue_number, red_number + yellow_number, green_number + blue_number, green_number + yellow_number)
+
+cat("Possible values of X:", values_X)
+```
+
+```{r}
+
+#b)
+# Probabilities for each color
+pro_red <- 5/8
+pro_green <- 3/8
+pro_blue <- 2/6
+pro_yellow <- 4/6
+
+Pmf_X <- c( pro_red * pro_blue, pro_red * pro_yellow, pro_green * pro_blue, pro_green * pro_yellow)
+
+cat("Pmf of X:" , Pmf_X )
+
+```
+
+```{r}
+
+#c)
+E_X <- sum(Pmf_X * values_X)
+
+Var_X <- sum((values_X - E_X)^2 * Pmf_X)
+
+cat("E(X): " , E_X , "\n")
+cat("Var(X): " , Var_X )
+
+```
+
+```{r}
+
+#d)
+# Y = 2X - 3
+
+transform_Y <- function(X) 2 * X - 3
+
+values_Y <- transform_Y(values_X)
+
+Pmf_Y <- Pmf_X
+
+cat("Posible values of Y: " , values_Y , "\n")
+cat("Pmf of Y: " , Pmf_Y )
+
+```
+
+```{r}
+
+#e)
+Cdf_Y <- cumsum(Pmf_Y)
+
+cat("Cdf of Y: " , Cdf_Y )
+
+```
+```{r}
+#f)
+
+```
+

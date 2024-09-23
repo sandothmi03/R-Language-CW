@@ -1,0 +1,48 @@
+---
+title: "Q6"
+author: "Gihanga"
+date: "2024-03-21"
+output: pdf_document
+---
+
+```{r}
+#a)
+
+exam_scores <- c(82, 88, 75, 94, 90, 85, 78, 91, 86, 89, 92, 80, 87, 79, 84, 77, 83, 81, 76, 93, 88, 85, 89, 90, 82, 86, 75, 91, 79, 84, 78, 95, 88, 87, 93, 86, 82, 89, 90, 80)
+
+num_bootstraps <- 20000
+
+bootstrap_means <- numeric(num_bootstraps)
+
+set.seed(42) # for reproducibility
+for (i in 1:num_bootstraps) {
+  bootstrap_sample <- sample(exam_scores, size = length(exam_scores), replace = TRUE)
+  bootstrap_means[i] <- mean(bootstrap_sample)
+}
+
+head(bootstrap_means)
+
+```
+
+```{r}
+#b)
+
+hist(bootstrap_means, breaks = 30, col = "lightblue", main = "Bootstrap Sampling Distribution of Sample Mean", xlab = "Sample Mean")
+
+```
+
+```{r}
+#c)
+
+confidence_interval <- quantile(bootstrap_means, c(0.05, 0.95))
+confidence_interval
+
+```
+
+```{r}
+#d)
+
+qqnorm(bootstrap_means)
+qqline(bootstrap_means)
+
+```

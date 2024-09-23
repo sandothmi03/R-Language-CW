@@ -1,0 +1,53 @@
+---
+title: "Q3"
+author: "Gihanga"
+date: "2024-03-14"
+output: pdf_document
+---
+
+```{r}
+#a)
+
+Data <- data.frame(
+  X <- c(2, 2.5, 3, 3.5, 4, 4.5, 5, 5.5, 6),
+  Y <- c(6, 7.25, 8, 9.0625, 10, 11.0625, 12.25, 13.5625, 15)
+)
+
+plot(Data$X, Data$Y, main = "Y Vs. X", xlab = "X", ylab ="Y")
+
+```
+
+```{r}
+#b)
+
+correlation <- cor(Data$X, Data$Y)
+
+cat("Pearson's correlation coefficient (r(x, y)): ", correlation)
+
+```
+
+```{r}
+#c)
+
+
+```
+
+```{r}
+#d)
+
+data_subset <- Data[7:nrow(Data), ]
+
+correlation_subset <- cor(data_subset$X, data_subset$Y)
+
+cat("Pearson's correlation coefficient (r(x, y)) for the last six pairs: ", correlation_subset)
+
+cat("Change in correlation coefficient: ", correlation - correlation_subset)
+
+```
+
+```{r}
+#e)
+
+
+
+```
